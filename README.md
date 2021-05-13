@@ -23,7 +23,7 @@
 ```bash
 deploy:
   type: git
-  repo: https://lins403.github.io/hexo-blog
+  repo: https://github.com/lins403/hexo-blog.git
   branch: gh-pages
 
 npm install hexo-deployer-git --save
