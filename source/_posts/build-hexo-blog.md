@@ -58,6 +58,7 @@ hexo d -g	#deploy,部署之前预先生成静态文件
 - 创建 Workflow 文件：`.github/workflows/deploy.yml`
 
 ```yaml
+# 模板源于B站up主`objtube的卢克儿`的分享
 name: Build and Deploy
 on: [push]
 jobs:
