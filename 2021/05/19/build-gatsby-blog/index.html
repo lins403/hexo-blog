@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      899 字
+      968 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12
+      14
        分钟
     </span>
   
@@ -253,6 +253,7 @@
 <h1 id="关于Gatsby"><a href="#关于Gatsby" class="headerlink" title="关于Gatsby"></a>关于Gatsby</h1><blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kK411772f/?spm_id_from=333.788.recommend_more_video.8">作者在ReactiveConf 2019的路演</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mHFAM0CXviE">Gatsby - Full Tutorial for Beginners</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.sitepoint.com/gatsby-mdx-blog/">How to Build a Developer Blog with Gatsby and MDX</a></p>
 </blockquote>
 <h1 id="搭建与部署"><a href="#搭建与部署" class="headerlink" title="搭建与部署"></a>搭建与部署</h1><blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.gatsbyjs.cn/tutorial/">Gatsby.js 中文教程</a></p>
@@ -304,6 +305,8 @@
 </blockquote>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install gatsby-source-graphql<br><span class="hljs-built_in">npm</span> i gatsby-source-github-api<br><span class="hljs-built_in">npm</span> install dotenv<br></code></pre></td></tr></table></figure>
 
+<!--好像明文提交了github token，这个就会丢失掉-->
+
 <h2 id="再部署"><a href="#再部署" class="headerlink" title="再部署"></a>再部署</h2><p>使用主域名（不使用gh-pages分支），使用github actions，如上</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 解除原来的绑定关系</span><br>git remote remove origin<br><br><span class="hljs-comment"># 在新的项目下初始化git</span><br>git init<br><br><span class="hljs-comment"># 添加resource分支</span><br>git switch -c <span class="hljs-built_in">source</span><br><br><span class="hljs-comment"># 添加github actions</span><br>&gt;添加文件 .github/workflows/deploy.yml<br><br><span class="hljs-comment"># 绑定至远端</span><br>git remote add origin https://github.com/lins403/lins403.github.io.git<br>git add --all<br>git commit -m <span class="hljs-string">&#x27;使用gatsby-theme-minimal-blog主题后的初始化&#x27;</span><br><br><span class="hljs-comment"># 这里会和远程的source冲突，所以先把远端的source分支删了</span><br>&gt; 我觉得手动去github上删除比较好<br><br><span class="hljs-comment"># 然后再push提交</span><br>git push -u origin <span class="hljs-built_in">source</span><br></code></pre></td></tr></table></figure>
 
@@ -314,6 +317,25 @@
 <p><a target="_blank" rel="noopener" href="https://docs.github.com/cn/actions/reference/environment-variables">Github actions 环境变量</a></p>
 </blockquote>
 <p>所以就在 deploy.yaml 中的env下添加 <code>GITHUB_TOKEN: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;</code> 就好了</p>
+<h1 id="添加Google-Analytics"><a href="#添加Google-Analytics" class="headerlink" title="添加Google Analytics"></a>添加Google Analytics</h1><p><a href="https://analytics.google.com/analytics" alt=""
+    target="_blank" >https://analytics.google.com/analytics</a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://support.google.com/analytics/answer/10269537?hl=zh-Hans&ref_topic=9303319">为网站设置 Google Analytics（分析）(Universal Analytics)</a></p>
+<p><a target="_blank" rel="noopener" href="https://javascript.plainenglish.io/how-to-connect-your-gatsby-js-landing-page-to-google-analytics-and-deploy-to-netlify-step-by-step-8352467583df">How to add Google Analytics to your Gatsby.js website</a></p>
+</blockquote>
+<!--不懂为什么github actions的部署方式无法让这个生效-->
+
+
+
+<h1 id="添加分页"><a href="#添加分页" class="headerlink" title="添加分页"></a>添加分页</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/LekoArts/gatsby-themes/issues/539">Minimal Blog Theme Pagination Help</a> </p>
+<p><a target="_blank" rel="noopener" href="https://www.gatsbyjs.cn/docs/adding-pagination/">Adding Pagination</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.gatsbyjs.com/docs/creating-and-modifying-pages/#modifying-pages-created-by-core-or-plugins">Creating and Modifying Pages</a></p>
+</blockquote>
+<!--没搞出来，思路懂了但一些细节问题还是没弄清-->
+
+
+
 <h1 id="Hexo、VuePress以及Gatsby的使用体验"><a href="#Hexo、VuePress以及Gatsby的使用体验" class="headerlink" title="Hexo、VuePress以及Gatsby的使用体验"></a>Hexo、VuePress以及Gatsby的使用体验</h1><ul>
 <li>以前使用过 Jekyll，体验很差，对这三个的上手难度和操作体验都比较满意</li>
 <li>目前文章很少的情况下，Hexo最快，Gatsby次之，vuepress最慢</li>
@@ -323,6 +345,11 @@
 <li>技术上的差异不怎么了解，以后再深入</li>
 <li>目前打算将gatsby-blog做主网站，会陆续拓展功能，以后可能迁移至个人服务器；vuepress-doc就用来记录比较系统的学习笔记，比如React学习笔记；hexo-blog就用来记录比较零散的学习笔记，或者项目笔记，诸如 tips-and-tricks 之类的。</li>
 </ul>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p><strong>与 nextjs</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.solutelabs.com/blog/gatsby-js-vs-next-js-which-one-to-choose-when">Gatsby.JS vs Next.JS</a> </p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6882994530149203981">[译] NextJS vs. NuxtJS vs. GatsbyJS</a></p>
+</blockquote>
 
             </div>
             <hr>
