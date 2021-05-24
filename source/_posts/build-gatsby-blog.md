@@ -18,6 +18,8 @@ tags:
 > [作者在ReactiveConf 2019的路演](https://www.bilibili.com/video/BV1kK411772f/?spm_id_from=333.788.recommend_more_video.8)
 >
 > [Gatsby - Full Tutorial for Beginners](https://www.youtube.com/watch?v=mHFAM0CXviE)
+>
+> [How to Build a Developer Blog with Gatsby and MDX](https://www.sitepoint.com/gatsby-mdx-blog/)
 
 
 
@@ -137,6 +139,8 @@ npm i gatsby-source-github-api
 npm install dotenv
 ```
 
+<!--好像明文提交了github token，这个就会丢失掉-->
+
 ## 再部署
 
 使用主域名（不使用gh-pages分支），使用github actions，如上
@@ -178,6 +182,31 @@ git push -u origin source
 
 
 
+# 添加Google Analytics
+
+<a href="https://analytics.google.com/analytics" alt=""
+    target="_blank" >https://analytics.google.com/analytics</a>
+
+> [为网站设置 Google Analytics（分析）(Universal Analytics)](https://support.google.com/analytics/answer/10269537?hl=zh-Hans&ref_topic=9303319)
+>
+> [How to add Google Analytics to your Gatsby.js website](https://javascript.plainenglish.io/how-to-connect-your-gatsby-js-landing-page-to-google-analytics-and-deploy-to-netlify-step-by-step-8352467583df)
+
+<!--不懂为什么github actions的部署方式无法让这个生效-->
+
+
+
+# 添加分页
+
+> [Minimal Blog Theme Pagination Help](https://github.com/LekoArts/gatsby-themes/issues/539) 
+>
+> [Adding Pagination](https://www.gatsbyjs.cn/docs/adding-pagination/)
+>
+> [Creating and Modifying Pages](https://www.gatsbyjs.com/docs/creating-and-modifying-pages/#modifying-pages-created-by-core-or-plugins)
+
+<!--没搞出来，思路懂了但一些细节问题还是没弄清-->
+
+
+
 # Hexo、VuePress以及Gatsby的使用体验
 
 - 以前使用过 Jekyll，体验很差，对这三个的上手难度和操作体验都比较满意
@@ -187,3 +216,14 @@ git push -u origin source
 - vuepress目前用的是 1.x 的版本，捉襟见肘，但是感觉挺适合用于一个项目的gh-pages分支，作为在线文档。
 - 技术上的差异不怎么了解，以后再深入
 - 目前打算将gatsby-blog做主网站，会陆续拓展功能，以后可能迁移至个人服务器；vuepress-doc就用来记录比较系统的学习笔记，比如React学习笔记；hexo-blog就用来记录比较零散的学习笔记，或者项目笔记，诸如 tips-and-tricks 之类的。
+
+
+
+# 其它
+
+**与 nextjs**
+
+> [Gatsby.JS vs Next.JS](https://www.solutelabs.com/blog/gatsby-js-vs-next-js-which-one-to-choose-when) 
+>
+> [[译] NextJS vs. NuxtJS vs. GatsbyJS](https://juejin.cn/post/6882994530149203981)
+
